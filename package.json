@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "node api/app.js"
+    "apiService": "node api/app.js"
   },
   "repository": {
     "type": "git",
