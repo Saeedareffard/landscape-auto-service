@@ -55,7 +55,7 @@
     //   }
     // );
     $.ajax({
-      url: `https://auto-services.onrender.com/email?firstName=${firstName}&carName=${carName}&details=${details}&serviceName=${serviceName}&receivingAddress=${emailAddress}&date=${date}&phone=${phone}`,
+      url: `https://cors-anywhere.herokuapp.com/https://auto-services.onrender.com/email?firstName=${firstName}&carName=${carName}&details=${details}&serviceName=${serviceName}&receivingAddress=${emailAddress}&date=${date}&phone=${phone}`,
       data: {},
       type: "GET",
       beforeSend: function (xhr) {
