@@ -43,19 +43,32 @@
     let emailAddress = $("#email").val();
     let carName = $("#carName").val();
     let details = $("#details").val();
-    let date = $('#dateSelected').val();
+    let date = $("#dateSelected").val();
     let phone = $("#phone").val();
     let serviceName = $("#serviceName option:selected").text();
-    $.loading($btn, true)
-   
-    $.get(
-      `https://auto-services.onrender.com/email?firstName=${firstName}&carName=${carName}&details=${details}&serviceName=${serviceName}&receivingAddress=${emailAddress}&date=${date}&phone=${phone}`,
-      function (data) {
+    $.loading($btn, true);
+    // $.get(
+    //   `https://auto-services.onrender.com/email?firstName=${firstName}&carName=${carName}&details=${details}&serviceName=${serviceName}&receivingAddress=${emailAddress}&date=${date}&phone=${phone}`,
+    //   function (data) {
+    //     $.loading($btn, false);
+    //     $("#myModal").modal("show");
+    //   }
+    // );
+    $.ajax({
+      url: `https://auto-services.onrender.com/email?firstName=${firstName}&carName=${carName}&details=${details}&serviceName=${serviceName}&receivingAddress=${emailAddress}&date=${date}&phone=${phone}`,
+      data: {},
+      type: "GET",
+      beforeSend: function (xhr) {
+        xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+      },
+      success: function () {
+        // alert("Success!" + authHeader);
         $.loading($btn, false);
-        $("#myModal").modal("show");
+      },
+      error: function (error){
+        console.log(error);
       }
-    );
-    $.loading($btn, false)
+    });
 
     // $("#myModal").modal("show");
   });
