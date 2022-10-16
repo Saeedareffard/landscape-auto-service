@@ -1,0 +1,27 @@
+{
+  "name": "auto-services",
+  "version": "1.0.0",
+  "description": "landscape-auto-service",
+  "main": "js/main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node api/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saeedareffard/landscape-auto-service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Saeedareffard/landscape-auto-service/issues"
+  },
+  "homepage": "https://github.com/Saeedareffard/landscape-auto-service#readme",
+  "dependencies": {
+    "express.js": "^1.0.0",
+    "nodemailer": "^6.8.0"
+  }
+}
