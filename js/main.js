@@ -54,7 +54,7 @@
       $.loading($btn, true);
 
       $.ajax({
-        url: `https://cors-anywhere.herokuapp.com/https://auto-services.onrender.com/email?firstName=${firstName}&carName=${carName}&details=${details}&serviceName=${serviceName}&receivingAddress=${emailAddress}&date=${date}&phone=${phone}`,
+        url: `https://auto-services.onrender.com/email?firstName=${firstName}&carName=${carName}&details=${details}&serviceName=${serviceName}&receivingAddress=${emailAddress}&date=${date}&phone=${phone}`,
         data: {},
         type: "GET",
         beforeSend: function (xhr) {
@@ -62,7 +62,9 @@
         },
         success: function () {
           // alert("Success!" + authHeader);
+
           $.loading($btn, false);
+          $("form").trigger("reset");
         },
         error: function (error) {
           $.loading($btn, false);
@@ -70,6 +72,7 @@
           console.log(error);
         },
       });
+      
     }
 
     // $("#myModal").modal("show");
