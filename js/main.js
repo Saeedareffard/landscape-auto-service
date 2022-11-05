@@ -30,18 +30,20 @@
         .html(btn.data("loading-text") || "Loading...");
       return;
     }
-    if (!btn.data("old-html")) return;
+    if (btn==undefined|| !btn.data("old-html")) return;
     btn
       .prop("disabled", false)
       .html(btn.data("old-html"))
       .data("old-html", false);
   };
+
+  $('.close').click(function () {
+    $("#myModal").modal("hide");
+  });
   $("#booking").submit(function (e) {
     e.preventDefault();
-  });
-  $("#book-submit-button").click(function () {
+    
     var form = $("#booking");
-    alert(form.valid());
     if (form.valid()) {
       var $btn = $(this);
       let firstName = $("#name").val();
@@ -61,21 +63,18 @@
           xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
         },
         success: function () {
-          // alert("Success!" + authHeader);
 
-          $.loading($btn, false);
-          $("form").trigger("reset");
         },
         error: function (error) {
-          $.loading($btn, false);
-
           console.log(error);
         },
       });
-      
+      $.loading($btn, false);
+      document.getElementById('booking').reset();
+  
+      $("#myModal").modal("show");
     }
-
-    // $("#myModal").modal("show");
+   
   });
   // Dropdown on mouse hover
   const $dropdown = $(".dropdown");
