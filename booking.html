@@ -213,12 +213,11 @@
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <!-- <div class="date" id="date1" data-target-input="nearest"> -->
-                                    <input type="date" id="dateSelected"
-                                        class="form-control border-0 datetimepicker-input" data-provide="datepicker"
-                                        placeholder="Service Date" data-target="#date1" data-toggle="datetimepicker"
+                                    <input type="text" id="dateSelected" aria-placeholder="Service Date" onfocus="this.type='date';
+                                    this.setAttribute('onfocus','');this.blur();this.focus();"
+                                        class="form-control border-0 datepicker" data-provide="datepicker"
+                                         data-target="#date1" data-toggle="datetimepicker" placeholder="Service Date"
                                         style="height: 55px;">
-                                    <!-- </div> -->
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <input type="tel" id="phone" class="form-control w-100 p-3" style="height: 55px;"
