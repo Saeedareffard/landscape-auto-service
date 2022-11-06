@@ -45,7 +45,34 @@
 
     var form = $("#booking");
     if (form.valid()) {
-      var $btn = $(this);
+      var {
+        $btn,
+        firstName,
+        carName,
+        details,
+        serviceName,
+        emailAddress,
+        date,
+        phone,
+      } = getformValues();
+      $.loading($btn, true);
+      setTimeout(function () {
+        $.loading($btn, false);
+        resetFormAndShowModal();
+      }, 1000);
+      sendEmail(
+        firstName,
+        carName,
+        details,
+        serviceName,
+        emailAddress,
+        date,
+        phone
+      );
+    }
+
+    function getformValues() {
+      var $btn = $("#book-submit-button");
       let firstName = $("#name").val();
       let emailAddress = $("#email").val();
       let carName = $("#carName").val();
@@ -53,8 +80,33 @@
       let date = $("#dateSelected").val();
       let phone = $("#phone").val();
       let serviceName = $("#serviceName option:selected").text();
-      $.loading($btn, true);
+      return {
+        $btn,
+        firstName,
+        carName,
+        details,
+        serviceName,
+        emailAddress,
+        date,
+        phone,
+      };
+    }
 
+    function resetFormAndShowModal() {
+      document.getElementById("booking").reset();
+
+      $("#myModal").modal("show");
+    }
+
+    function sendEmail(
+      firstName,
+      carName,
+      details,
+      serviceName,
+      emailAddress,
+      date,
+      phone
+    ) {
       $.ajax({
         url: `https://auto-services.onrender.com/email?firstName=${firstName}&carName=${carName}&details=${details}&serviceName=${serviceName}&receivingAddress=${emailAddress}&date=${date}&phone=${phone}`,
         data: {},
@@ -67,10 +119,6 @@
           console.log(error);
         },
       });
-      $.loading($btn, false);
-      document.getElementById("booking").reset();
-
-      $("#myModal").modal("show");
     }
   });
   // Dropdown on mouse hover
