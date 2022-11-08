@@ -26,7 +26,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap"
         rel="stylesheet">
 
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -192,7 +193,7 @@
                     <div class="bg-primary h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn"
                         data-wow-delay="0.6s">
                         <h1 class="text-white mb-4">Book For A Service</h1>
-                        <form id="booking" >
+                        <form id="booking">
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
                                     <input type="text" id="name" class="form-control border-0" placeholder="Your Name"
@@ -203,8 +204,8 @@
                                         id="email" style="height: 55px;" required>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <select class="form-select form-control border-0" style="height: 55px;" id="serviceName"
-                                        aria-label="Select a service" required>
+                                    <select class="form-select form-control border-0" style="height: 55px;"
+                                        id="serviceName" aria-label="Select a service" required>
                                         <option value="Wof">WoF</option>
                                         <option value="Bronze service">Bronze service</option>
                                         <option value="Silver service">Silver service</option>
@@ -216,17 +217,18 @@
                                     <input type="text" id="dateSelected" aria-placeholder="Service Date" onfocus="this.type='date';
                                     this.setAttribute('onfocus','');this.blur();this.focus();"
                                         class="form-control border-0 datepicker" data-provide="datepicker"
-                                         data-target="#date1" data-toggle="datetimepicker" placeholder="Service Date"
+                                        data-target="#date1" data-toggle="datetimepicker" placeholder="Service Date"
                                         style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <input type="tel" id="phone" class="form-control w-100 p-3" style="height: 55px;"
-                                        name="phone" placeholder="Enter your phone number" 
-                                        pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
+                                        name="phone" placeholder="Enter your phone number"
+                                        pattern="[0-9]{3}[0-9]{3}[0-9]{3,4}" required>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <input type="text" id="carName" class="form-control border-0"
-                                        placeholder="Your Car model" style="height: 55px;" aria-required="true" required/>
+                                        placeholder="Your Car model" style="height: 55px;" aria-required="true"
+                                        required />
                                 </div>
                                 <div class="col-12">
                                     <textarea class="form-control border-0" id="details"
@@ -297,11 +299,13 @@
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+09 638 9729</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>landscapeautoservices@yahoo.co.nz</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/landscapeautoservices.co.nz"><i
-                            class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/jamal-biparva-77a80a59/"><i
-                            class="fab fa-linkedin-in"></i></a>
-                      </div>
+                        <a class="btn btn-outline-light btn-social"
+                            href="https://www.facebook.com/landscapeautoservices.co.nz"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social"
+                            href="https://www.linkedin.com/in/jamal-biparva-77a80a59/"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-light mb-4">Opening Hours</h4>
@@ -324,7 +328,7 @@
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                         &copy; <a class="border-bottom" href="#">landscapeautoservices.co.nz</a>, All Right Reserved.
 
-                         
+
                         Designed With <i class="fa fa-heart"></i>
                     </div>
                     <div class="col-md-6 text-center text-md-end">

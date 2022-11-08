@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Saeedareffard/landscape-auto-service#readme",
   "dependencies": {
+    "@emailjs/browser": "^3.9.1",
     "express.js": "^1.0.0",
     "nodemailer": "^6.8.0"
   }

@@ -1,5 +1,8 @@
 (function ($) {
   "use strict";
+  (function () {
+    emailjs.init("Rf3v8E-Pi08So1mch");
+  })();
 
   // Spinner
   var spinner = function () {
@@ -44,6 +47,7 @@
     e.preventDefault();
 
     var form = $("#booking");
+
     if (form.valid()) {
       var {
         $btn,
@@ -107,18 +111,34 @@
       date,
       phone
     ) {
-      $.ajax({
-        url: `https://auto-services.onrender.com/email?firstName=${firstName}&carName=${carName}&details=${details}&serviceName=${serviceName}&receivingAddress=${emailAddress}&date=${date}&phone=${phone}`,
-        data: {},
-        type: "GET",
-        beforeSend: function (xhr) {
-          xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+      emailjs.send(
+        "service_scqrgms",
+        "template_21f81kt",
+        {
+          to_Name: firstName,
+          to_Email: emailAddress,
+          details: details,
+          date: date,
+          carName: carName,
+          serviceName: serviceName,
         },
-        success: function () {},
-        error: function (error) {
-          console.log(error);
+        "Rf3v8E-Pi08So1mch"
+      );
+      emailjs.send(
+        "service_scqrgms",
+        "template_kjnd385",
+        {
+          firstName: firstName,
+          phoneNumber: phone,
+          carName: carName,
+          serviceName: serviceName,
+          details: details,
+          date: date,
+          to_email: emailAddress,
+          reply_to: "saeedareffard@yahoo.com",
         },
-      });
+        "Rf3v8E-Pi08So1mch"
+      );
     }
   });
   // Dropdown on mouse hover
