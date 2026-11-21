@@ -1,5 +1,13 @@
 (function ($) {
   "use strict";
+  const businessHours = "07:30 AM - 04:30 PM";
+  document.querySelectorAll("[data-business-hours]").forEach((element) => {
+    element.textContent =
+      element.dataset.businessHours === "compact"
+        ? `Mon - Fri: ${businessHours}`
+        : businessHours;
+  });
+
   (function () {
     emailjs.init("Rf3v8E-Pi08So1mch");
   })();
